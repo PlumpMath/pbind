@@ -1,0 +1,6 @@
+*.hi
+*.o
+_site
+_cache
+#css files are only from blueprint.  this project uses scss
+*.css
