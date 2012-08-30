@@ -77,7 +77,7 @@ h1,h2,h3,h4 {@extend .sansfont; font-weight: 600; a:link,a:visited {text-decorat
 h1 { @extend .seriffont; a:link,a:visited {@extend .dark}}
 h1,h3 {@extend .dark}
 h2,h4 {@extend .darkest}
-pre { @extend .codefont; font-weight: 400; @extend .darkestbg; @extend .medium; @extend .normalfont;@extend .nopadding; @extend .nomargin;}
+pre { @extend .codefont; font-weight: 400; @extend .darkestbg; @extend .medium; @extend .normalfont;@extend .nopadding; @extend .nomargin; overflow:scroll}
 body { @extend .seriffont; font-weight: 400; @extend .dark; background-color: $light-color;}
 p { @extend .normalfont;@extend .nopadding;@extend .smallmargin;margin-bottom:.75em;text-indent:2em}
 a:link {@extend .darkest}
