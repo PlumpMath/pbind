@@ -1,0 +1,92 @@
+/*
+$lightest-color: #b5c9c6;
+$light-color:    #b0ada6;
+$medium-color:   #bda85a;
+$dark-color:     #627a94;
+$darkest-color:  #44425e;
+*/
+/*
+$lightest-color: #ded7d0;
+$light-color:    #cfcf88;
+$medium-color:   #b3d420;
+$dark-color:     #8c8070;
+$darkest-color:  #465425;
+*/
+
+$lightest-color: #e8dcca;
+$light-color:    #e8b67e;
+$medium-color:   #b8535a;
+$dark-color:     #856869;
+$darkest-color:  #543b59;
+
+/*
+$lightest-color: #e3dbcc;
+$light-color:    #90d6c8;
+$medium-color:   #a3b8cc;
+$dark-color:     #4ab4c2;
+$darkest-color:  #172d75;
+*/
+/*
+$lightest-color: #abb4c4;
+$light-color:    #b3a186;
+$medium-color:   #13827e;
+$dark-color:     #736d6a;
+$darkest-color:  #0e4142;
+*/
+/*
+$lightest-color: #d1c28e;
+$light-color:    #e09d38;
+$medium-color:   #e86519;
+$dark-color:     #bf3a0d;
+$darkest-color:  #2c262e;
+*/
+/*
+$lightest-color: #;
+$light-color:    #;
+$medium-color:   #;
+$dark-color:     #;
+$darkest-color:  #;
+*/
+
+$sans-font: "Source Sans Pro";
+$serif-font: "Trykker";
+$code-font: "Inconsolata";
+
+.lightest {color: $lightest-color}
+.light {color: $light-color}
+.medium {color: $medium-color}
+.dark {color: $dark-color}
+.darkest {color: $darkest-color}
+.lightestbg {background-color: $lightest-color}
+.lightbg {background-color: $light-color}
+.mediumbg {background-color: $medium-color}
+.darkbg {background-color: $dark-color}
+.darkestbg {background-color: $darkest-color}
+.codefont {font-family: $code-font,sans-serif}
+.sansfont {font-family: $sans-font,sans-serif}
+.seriffont {font-family: $serif-font,serif}
+.nomargin {margin: 0;}
+.smallmargin {margin: 5px;}
+.bigmargin {margin: 10px;}
+.normalpadding {padding: 5px;}
+.nopadding{padding: 0}
+.normalfont {font-size: 14pt}
+.smallfont {font-size: 10pt}
+
+h1,h2,h3,h4 {@extend .sansfont; font-weight: 600; a:link,a:visited {text-decoration: none}; @extend .nomargin}
+h1 { @extend .seriffont; a:link,a:visited {@extend .dark}}
+h1,h3 {@extend .dark}
+h2,h4 {@extend .darkest}
+pre { @extend .codefont; font-weight: 400; @extend .darkestbg; @extend .medium; @extend .normalfont;@extend .nopadding; @extend .nomargin;}
+body { @extend .seriffont; font-weight: 400; @extend .dark; background-color: $light-color;}
+p { @extend .normalfont;@extend .nopadding;@extend .smallmargin;margin-bottom:.75em;text-indent:2em}
+a:link {@extend .darkest}
+a:visited {@extend .dark}
+html, body, container{ height: 100%;}
+.gutter { @extend .lightbg;@extend .smallfont;@extend .sansfont;p {@extend .smallfont;text-indent:0}}
+.centerbar {@extend .lightestbg; @extend .nomargin}
+.hstripe div {@extend .nomargin;height: 4px; overflow: hidden; text-indent: -9999px;}
+.header,.footer {@extend .nomargin;}
+.footer {@extend body; @extend .codefont; text-align: center}
+.logo {letter-spacing: -.3em}
+.readmore {@extend .sansfont; @extend .darkest; text-align: right; @extend .normalfont; padding-right: .5em; a:link,a:visited {@extend .darkest; text-decoration: none} }
