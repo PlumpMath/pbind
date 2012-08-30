@@ -31,7 +31,6 @@ main = hakyll $ do
       >>> applyTemplateCompiler "templates/post.html"
       >>> defaultHtmlCompiler
 
---refactor these into 1 function
   match "posts.html" $ route idRoute
   create "posts.html" $ constA mempty
     >>> arr (setField "title" "All posts")
@@ -63,14 +62,6 @@ main = hakyll $ do
 
     tagIdentifier :: String -> Identifier (Page String)
     tagIdentifier = fromCapture "tags/*"
-    
-    -- summaryCompiler :: String -> Int -> Compiler (Page String) (Page String)
-    -- summaryCompiler s c =  arr (setField "title" $ if s == "index" then "Home" else s)
-    -- >>> requireA "tags" (setFieldA "tagcloud" $ renderTagCloud')
-    -- >>> requireAllA "posts/*" (id *** arr (take c . recentFirst) >>> addPostList)
-    -- >>> applyTemplateCompiler "templates/" ++ s ++ ".html"
-    -- >>> defaultHtmlCompiler
-
 
 addPostList :: Compiler (Page String, [Page String]) (Page String)
 addPostList = setFieldA "posts" $

@@ -18,7 +18,7 @@ The challenge lies in the way hakyll stores the post, which consists of a plaint
     
     body text
 
-The solution is to somehow glean the first part of the body and bung it into a description field.  My poor understanding of arrows caused me to take an embarassingly long time to figure out what was going on behind the scenes in hakyll, but, stumbling through the haddock docs like a blind man looting a bazaar for his own portrait^*^, I found the copyBodyToField func.  This allows the very simple solution:
+The solution is to somehow glean the first part of the body and bung it into a description field.  My poor understanding of arrows caused me to take an embarassingly long time to figure out what was going on behind the scenes in hakyll, but, stumbling through the haddock docs like a blind man looting a bazaar for his own portrait^*^, I found the [copyBodyToField](http://jaspervdj.be/hakyll/reference/Hakyll-Web-Page-Metadata.html#v:copyBodyToField) func.  This allows the very simple solution:
 
     descCompiler :: Compiler (Page String) (Page String)
     descCompiler =  arr $ copyBodyToField "description"
