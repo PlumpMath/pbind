@@ -12,7 +12,7 @@ import Hakyll
 main :: IO ()
 main = hakyll $ do  
     
-  forM_ [ "favicon.ico", "img/*" ] $ \p -> match p copy
+  forM_ [ "favicon.ico", "robots.txt","img/*" ] $ \p -> match p copy
       
   match "css/*" $ do
     route $ setExtension "css"
@@ -41,13 +41,13 @@ main = hakyll $ do
     >>> defaultHtmlCompiler
 
   match "index.html" $ route idRoute
-  create "index.html" ( constA mempty
+  create "index.html" $ constA mempty
     >>> arr (setField "title" "Home")
     >>> requireA "tags" (setFieldA "tagcloud" $ renderTagCloud')
     >>> requireAllA "posts/*" (id *** arr (take 3 . recentFirst) >>> addPostList)
     >>> applyTemplateCompiler "templates/index.html"
     >>> defaultHtmlCompiler
-        )
+
   create "tags" $ requireAll "posts/*" (\_ ps -> readTags ps :: Tags String)
 
   match "tags/*" $ route $ setExtension ".html"
