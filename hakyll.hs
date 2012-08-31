@@ -54,6 +54,11 @@ main = hakyll $ do
     >>> arr tagsMap
     >>> arr (map (\(t, p) -> (tagIdentifier t, makeTagList t p)))
 
+  match  "atom.xml" $ route idRoute
+  create "atom.xml" $
+    requireAll_ "posts/*" >>> arr recentFirst >>> renderAtom feedConfiguration
+
+
   match "templates/*" $ compile templateCompiler
   where
     copy = route idRoute >> compile copyFileCompiler
@@ -91,3 +96,12 @@ sassCompiler :: Compiler Resource String
 sassCompiler = getResourceString 
                >>> unixFilter "sass" ["-s", "--scss"]
                >>> arr compressCss
+               
+feedConfiguration :: FeedConfiguration
+feedConfiguration = FeedConfiguration { 
+  feedTitle       = "Pronounced Bind RSS feed."
+  , feedDescription = "A hakyll and haskell learning blog."
+  , feedAuthorName  = "Chris Rooney"
+  , feedAuthorEmail = "crooney@pronouncedbind.com"
+  , feedRoot        = "http://pronouncedbind.com"
+  }
