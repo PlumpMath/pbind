@@ -4,3 +4,5 @@ _site
 _cache
 #css files are only from blueprint.  this project uses scss
 *.css
+#utilities that are not part of actual project
+*.pl
