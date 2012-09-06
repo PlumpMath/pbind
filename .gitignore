@@ -1,8 +1,13 @@
 *.hi
 *.o
+*~
 _site
 _cache
+#executable
+hakyll
 #css files are only from blueprint.  this project uses scss
 *.css
+css/.sass-cache
 #utilities that are not part of actual project
 *.pl
+deploy.sh
