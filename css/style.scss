@@ -62,6 +62,7 @@ $code-font: "Inconsolata";
 .mediumbg {background-color: $medium-color}
 .darkbg {background-color: $dark-color}
 .darkestbg {background-color: $darkest-color}
+.normalradius {border-radius: 10px;}
 .codefont {font-family: $code-font,sans-serif}
 .sansfont {font-family: $sans-font,sans-serif}
 .seriffont {font-family: $serif-font,serif}
@@ -71,13 +72,14 @@ $code-font: "Inconsolata";
 .normalpadding {padding: 5px;}
 .nopadding{padding: 0}
 .normalfont {font-size: 14pt}
+.mediumfont {font-size: 12pt}
 .smallfont {font-size: 10pt}
 
 h1,h2,h3,h4 {@extend .sansfont; font-weight: 600; a:link,a:visited {text-decoration: none}; @extend .nomargin}
 h1 { @extend .seriffont; a:link,a:visited {@extend .dark}}
 h1,h3 {@extend .dark}
 h2,h4 {@extend .darkest}
-pre { @extend .codefont; font-weight: 400; @extend .darkestbg; @extend .medium; @extend .normalfont;@extend .nopadding; @extend .nomargin; overflow:scroll}
+pre { @extend .codefont; font-weight: 400; @extend .darkestbg; @extend .medium; @extend .normalfont;@extend .nopadding; @extend .nomargin; @extend .mediumfont; @extend .normalradius; overflow:auto}
 body { @extend .seriffont; font-weight: 400; @extend .dark; background-color: $light-color;}
 p { @extend .normalfont;@extend .nopadding;@extend .smallmargin;margin-bottom:.75em;text-indent:2em}
 a:link {@extend .darkest}
